@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mini Çeviri</title>
+
+<style>
+body{
+  font-family: Arial;
+  text-align:center;
+  background:#f2f2f2;
+  padding:20px;
+}
+
+textarea{
+  width:90%;
+  max-width:400px;
+  height:100px;
+  padding:10px;
+  border-radius:10px;
+  border:1px solid #ccc;
+}
+
+button{
+  margin-top:10px;
+  padding:10px 20px;
+  border:none;
+  border-radius:10px;
+  background:green;
+  color:white;
+  font-size:16px;
+}
+
+#sonuc{
+  margin-top:20px;
+  background:white;
+  padding:15px;
+  border-radius:10px;
+  max-width:400px;
+  margin-left:auto;
+  margin-right:auto;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🌍 Mini Çeviri</h1>
+
+<textarea id="metin" placeholder="İngilizce yaz..."></textarea>
+<br>
+<button onclick="cevir()">Çevir</button>
+
+<div id="sonuc">Çeviri burada görünecek</div>
+
+<script>
+function cevir(){
+
+let text = document.getElementById("metin").value.toLowerCase();
+let sonuc = "";
+
+let sozluk = {
+"hello": "Merhaba",
+"how are you": "Nasılsın?",
+"i am fine": "İyiyim",
+"what is your name": "Adın ne?",
+"good morning": "Günaydın",
+"good night": "İyi geceler",
+"yes": "Evet",
+"no": "Hayır",
+"thanks": "Teşekkürler"
+};
+
+if(sozluk[text]){
+sonuc = sozluk[text];
+}else{
+sonuc = "Bu kelime sözlükte yok 😅";
+}
+
+document.getElementById("sonuc").innerText = sonuc;
+
+}
+</script>
+
+</body>
+</html>
